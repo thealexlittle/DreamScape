@@ -5,19 +5,39 @@ body {
     height: 100vh;
     margin: 0;
     background: black;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 {
     font-family: 'Source Code Pro', monospace;
+    font-size: 100px;
+    color: white;
 }
 
 h3 {
     font-family: 'Coda', cursive;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
 }
 
 canvas {
@@ -27,19 +47,48 @@ canvas {
     z-index: -99;
 }
 
+.content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .content-div {
-    max-width: 430px;
+    max-width: 700px;
     padding: 35px;
     border-radius: 15px;
     color: white;
     background: rgba(8, 8, 8, 0.7);
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+
+#triple {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+
+/* Clear floats after the columns */
+
+#triple:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .logo {
-    background-image: url("Logo.png");
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     margin: 0 auto;
+    filter: invert(88%) sepia(29%) saturate(5294%) hue-rotate(220deg) brightness(100%) contrast(102%);
 }

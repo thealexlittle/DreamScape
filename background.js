@@ -4,13 +4,15 @@ const fogColor = 0x002266;
 const light1Color = 0xcc6600;
 const light2Color = 0xd8547e;
 const light3Color = 0x3677ac;
+const width = window.innerWidth;
+const height = 1500
 
 let scene, camera, renderer, cloudParticles = [],
     composer;
 
 function init() {
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / height, 1, 1000);
     camera.position.z = 1;
     camera.rotation.x = 1.16;
     camera.rotation.y = -0.12;
@@ -37,7 +39,7 @@ function init() {
 
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
     scene.fog = new THREE.FogExp2(fogColor, 0.001);
     renderer.setClearColor(scene.fog.color);
     document.body.appendChild(renderer.domElement);
@@ -64,7 +66,7 @@ function init() {
             scene.add(cloud);
         }
     })
-    loader.load("assets/stars.jpg", function(texture) {
+    loader.load("assets/stars1.jpg", function(texture) {
 
         const textureEffect = new POSTPROCESSING.TextureEffect({
             blendFunction: POSTPROCESSING.BlendFunction.COLOR_DODGE,
